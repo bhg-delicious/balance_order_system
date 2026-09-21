@@ -221,6 +221,39 @@
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 
   <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function(OneSignal) {
+      try {
+        await OneSignal.init({
+          appId: "f953e2a3-5825-4a48-8caf-399e223fee66",
+          notifyButton: { enable: true },
+          serviceWorkerPath: "balance_order_system/OneSignalSDKWorker.js", 
+          serviceWorkerParam: { scope: "/balance_order_system/" } 
+        });
+        console.log("OneSignal 初始化成功！");
+
+        // 1. 初始化時檢查是否已有訂閱 ID
+        setTimeout(async () => {
+          const pushId = OneSignal.User.PushSubscription.id;
+          if (pushId) {
+            handleGasUrlUpdate(pushId);
+          }
+        }, 1500);
+
+        // 2. 監聽後續訂閱狀態改變
+        OneSignal.User.PushSubscription.addEventListener("change", function(event) {
+          if (event.current && event.current.id) {
+            handleGasUrlUpdate(event.current.id);
+          }
+        });
+
+      } catch (error) {
+        console.error("OneSignal 初始化發生錯誤:", error);
+      }
+    });
+  </script>
+
+  <script>
     // GAS 的實際部署網址
     const baseGasUrl = "https://script.google.com/macros/s/AKfycby8avMBWXM4N6XRRFcj2cgWffaRv7ReCc_4IrjrrQ1_OqjEMHxPYqpfrB_asWGKnUFCOg/exec";
     const targetUrl = new URL(baseGasUrl);
@@ -487,37 +520,6 @@
         console.log('【網址淨化】: \n', oldUrlString, '\nto\n', newUrlString);
       }
     })();
-    
-    window.OneSignalDeferred = window.OneSignalDeferred || [];
-    OneSignalDeferred.push(async function(OneSignal) {
-      try {
-        await OneSignal.init({
-          appId: "f953e2a3-5825-4a48-8caf-399e223fee66",
-          notifyButton: { enable: true },
-          serviceWorkerPath: "balance_order_system/OneSignalSDKWorker.js", 
-          serviceWorkerParam: { scope: "/balance_order_system/" } 
-        });
-        console.log("OneSignal 初始化成功！");
-
-        // 1. 初始化時檢查是否已有訂閱 ID
-        setTimeout(async () => {
-          const pushId = OneSignal.User.PushSubscription.id;
-          if (pushId) {
-            handleGasUrlUpdate(pushId);
-          }
-        }, 1500);
-
-        // 2. 監聽後續訂閱狀態改變
-        OneSignal.User.PushSubscription.addEventListener("change", function(event) {
-          if (event.current && event.current.id) {
-            handleGasUrlUpdate(event.current.id);
-          }
-        });
-
-      } catch (error) {
-        console.error("OneSignal 初始化發生錯誤:", error);
-      }
-    });
 
     // 【關鍵機制】檢查當前 iframe 網址，若沒有帶有該用戶的推播 ID，就將其更新
     function handleGasUrlUpdate(userId) {
