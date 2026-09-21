@@ -227,8 +227,8 @@
         await OneSignal.init({
           appId: "f953e2a3-5825-4a48-8caf-399e223fee66",
           notifyButton: { enable: true },
-          serviceWorkerPath: "balance_order_system/OneSignalSDKWorker.js", 
-          serviceWorkerParam: { scope: "/balance_order_system/" } 
+          serviceWorkerPath: "OneSignalSDKWorker.js", 
+          serviceWorkerParam: { scope: "/" } 
         });
         console.log("OneSignal 初始化成功！");
 
