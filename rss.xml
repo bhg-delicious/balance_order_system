@@ -3,30 +3,30 @@
   <channel>
     <!-- 1. 網站基本資訊 -->
     <title>大家政便當廠-儲值點餐系統</title>
-    <link>https://bhg-delicious.github.io/Balance-Order-System/?utm_source=rss</link>
+    <link>https://www.bhg-delicious.abrdns.com/?utm_source=rss</link>
     <description>集眾多功能於一身的儲值點餐系統</description>
     <language>zh-TW</language>
     <lastBuildDate>Fri, 18 Sep 2026 09:24:00 GMT</lastBuildDate>
     
     <!-- 讓閱讀器知道這個 RSS 的正確網址（選填，但建議加上） -->
-    <atom:link href="https://bhg-delicious.github.io/Balance-Order-System/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.bhg-delicious.abrdns.com/rss.xml" rel="self" type="application/rss+xml" />
 
     <!-- 2. 第一篇最新文章 -->
     <item>
       <title>第一篇文章的標題</title>
-      <link>https://yourdomain.com/posts/article-1</link>
+      <link>https://www.bhg-delicious.abrdns.com/</link>
       <description>這裡放文章的摘要，或是整篇文章的 HTML 內容（建議將 < 轉成 &lt; 等逸出字元）</description>
       <pubDate>Thu, 17 Sep 2026 09:00:00 +0800</pubDate>
-      <guid isPermaLink="true">https://yourdomain.com/posts/article-1</guid>
+      <guid isPermaLink="true">https://www.bhg-delicious.abrdns.com/</guid>
     </item>
 
     <!-- 3. 第二篇新文章（以此類推，通常保留最新的 10~20 篇） -->
     <item>
       <title>第二篇文章的標題</title>
-      <link>https://yourdomain.com/posts/article-2</link>
+      <link>https://www.bhg-delicious.abrdns.com/</link>
       <description>文章簡介或摘要內容...</description>
       <pubDate>Wed, 16 Sep 2026 15:30:00 +0800</pubDate>
-      <guid isPermaLink="true">https://yourdomain.com/posts/article-2</guid>
+      <guid isPermaLink="true">https://www.bhg-delicious.abrdns.com/</guid>
     </item>
 
   </channel>
