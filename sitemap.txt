@@ -13,8 +13,8 @@ https://www.bhg-delicious.abrdns.com/index.html&utm_source=sitemap.txt
 https://www.bhg-delicious.abrdns.com/manifest.json
 https://www.bhg-delicious.abrdns.com/robots.txt
 https://www.bhg-delicious.abrdns.com/sitemap.txt
-https://www.bhg-delicious.abrdns.com/應用程式服務條款.txt
-https://www.bhg-delicious.abrdns.com/應用程式隱私權政策.txt
+https://www.bhg-delicious.abrdns.com/terms_of_service.txt
+https://www.bhg-delicious.abrdns.com/privacy_policy.txt
 https://www.bhg-delicious.abrdns.com/README.md
 https://www.bhg-delicious.abrdns.com/favicon.ico
 https://www.bhg-delicious.abrdns.com/sitemap.xml
